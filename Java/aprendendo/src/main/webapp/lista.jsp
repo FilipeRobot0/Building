@@ -14,21 +14,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Listar dados</title>
     </head>
     <body>
-        <h1>Lista dos usuários</h1>
+        <h1>Lista de Usuários:</h1>
         <%
-            Session sessionRecheio;
-            sessionRecheio = HibernateUtil.getSession();
-            Transaction tr = sessionRecheio.beginTransaction();
-            String hql = "from Usuario";
-            List<Usuario> lista = (List)sessionRecheio.createQuery(hql).list();
-            request.setAttribute("usuario", lista);
-        %>
-    <display:table name="usuario">
-        <display:column property="id" title="ID"/>
-        <display:column property="nome" title="Nome completo"/>
-    </display:table>
+        Session sessionRecheio;
+        sessionRecheio = HibernateUtil.getSession();
+        Transaction tr = sessionRecheio.beginTransaction();
+        List<Usuario> lista = (List)sessionRecheio.createQuery("from Usuario").list();
+        tr.commit();
+          
+        
+                request.setAttribute("usuarios",lista);
+          %>
+          
+          <display:table name="usuarios">
+              <display:column property="nome" title="Nome Completo"/>
+              <display:column property="id" title="ID"/>
+          </display:table>
     </body>
 </html>
