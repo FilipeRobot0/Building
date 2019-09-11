@@ -85,8 +85,6 @@ public class ServletGrace extends HttpServlet {
         sessionRecheio.saveOrUpdate(usuario);
         tr.commit();
         processRequest(request, response);
-        
-        processRequest(request, response);
     }
 
     /**

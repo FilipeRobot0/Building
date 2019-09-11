@@ -10,6 +10,8 @@
 <%@page import="java.util.List"%>
 <%@page import="classe.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://displaytag.sf.net" prefix="display" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,9 +26,7 @@
         Transaction tr = sessionRecheio.beginTransaction();
         List<Usuario> lista = (List)sessionRecheio.createQuery("from Usuario").list();
         tr.commit();
-          
-        
-                request.setAttribute("usuarios",lista);
+        request.setAttribute("usuarios",lista);
           %>
           
           <display:table name="usuarios">
