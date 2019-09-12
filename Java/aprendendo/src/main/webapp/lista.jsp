@@ -32,6 +32,7 @@
           <display:table name="usuarios">
               <display:column property="nome" title="Nome Completo"/>
               <display:column property="id" title="ID"/>
+              <display:column property="senha" title="Senha"/>
           </display:table>
     </body>
 </html>

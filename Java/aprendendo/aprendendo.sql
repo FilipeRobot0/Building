@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.7
 -- Dumped by pg_dump version 9.5.7
 
--- Started on 2019-07-10 15:24:36 BRT
+-- Started on 2019-09-12 08:59:28 BRT
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -39,40 +39,40 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 181 (class 1259 OID 41285)
+-- TOC entry 181 (class 1259 OID 16539)
 -- Name: usuario; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE usuario (
-    nome character varying NOT NULL
+    nome character varying NOT NULL,
+    id character varying NOT NULL
 );
 
 
 ALTER TABLE usuario OWNER TO postgres;
 
 --
--- TOC entry 2134 (class 0 OID 41285)
+-- TOC entry 2134 (class 0 OID 16539)
 -- Dependencies: 181
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY usuario (nome) FROM stdin;
-eu
+COPY usuario (nome, id) FROM stdin;
 \.
 
 
 --
--- TOC entry 2019 (class 2606 OID 41292)
--- Name: pk_nome; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 2019 (class 2606 OID 16548)
+-- Name: pk_id; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY usuario
-    ADD CONSTRAINT pk_nome PRIMARY KEY (nome);
+    ADD CONSTRAINT pk_id PRIMARY KEY (id);
 
 
 --
 -- TOC entry 2141 (class 0 OID 0)
--- Dependencies: 6
+-- Dependencies: 7
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
@@ -82,7 +82,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-07-10 15:24:36 BRT
+-- Completed on 2019-09-12 08:59:29 BRT
 
 --
 -- PostgreSQL database dump complete
